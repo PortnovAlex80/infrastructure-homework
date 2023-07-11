@@ -10,3 +10,8 @@
 http://localhost:8080/me - вывод информации о текущем пользователе
 http://localhost:8080/generate - добавление нового NPC
 http://localhost:8080/id/{id} - получение сгенерированного NPC по id
+
+### Build and run ###
+1 Build docker image - buildDockerImage.sh  
+2 Run application - run.sh  
+3 Stop application - stop.sh  
