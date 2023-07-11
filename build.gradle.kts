@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.3.50"
 	kotlin("plugin.spring") version "1.3.50"
 	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50" apply false
+	//id("io.gitlab.arturbosch.detekt") version "1.18.1"
 }
 
 allprojects {
