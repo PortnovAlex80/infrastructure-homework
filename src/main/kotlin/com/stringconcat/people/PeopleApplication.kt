@@ -10,4 +10,5 @@ class PeopleApplication
 
 fun main(args: Array<String>) {
 	runApplication<PeopleApplication>(*args)
+
 }

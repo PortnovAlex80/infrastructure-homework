@@ -2,6 +2,6 @@
 set -e
 
 echo "Start gradlew"
-./gradlew build
+./gradlew build --warning-mode all
 
 echo "Build FINISHED"

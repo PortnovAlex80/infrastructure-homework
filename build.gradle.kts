@@ -3,10 +3,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.2.1.BUILD-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	kotlin("jvm") version "1.3.50"
-	kotlin("plugin.spring") version "1.3.50"
+	kotlin("jvm") version "1.6.20"
+	kotlin("plugin.spring") version "1.6.20"
 	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50" apply false
-	//id("io.gitlab.arturbosch.detekt") version "1.18.1"
+	id("io.gitlab.arturbosch.detekt") version "1.18.1"
 }
 
 allprojects {
@@ -15,7 +15,6 @@ allprojects {
 
 	repositories {
 		mavenCentral()
-		jcenter()
 		maven { url = uri("https://repo.spring.io/milestone") }
 		maven { url = uri("https://repo.spring.io/snapshot") }
 	}
@@ -65,7 +64,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core:4.9.1")
 
 	// tests
-	testCompile("org.junit.jupiter:junit-jupiter-api:5.8.2")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}

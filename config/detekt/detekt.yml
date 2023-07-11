@@ -1,0 +1,12 @@
+performance:
+  SpreadOperator:
+    active: false
+
+style:
+  WildcardImport:
+    active: false
+  ReturnCount:
+    active: false
+    excludeGuardClauses: true
+  MagicNumber:
+    ignorePropertyDeclaration: true
