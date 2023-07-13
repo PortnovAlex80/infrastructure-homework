@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 class businessPeopleTest {
     @Test
     fun sometest1() {
-        assertTrue(true)
+        assertTrue(false)
     }
     @Test
     fun sometest2() {
