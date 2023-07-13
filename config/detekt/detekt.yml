@@ -10,3 +10,7 @@ style:
     excludeGuardClauses: true
   MagicNumber:
     ignorePropertyDeclaration: true
+  UnusedImports:
+    active: true
+  UnusedPrivateMember:
+    active: true

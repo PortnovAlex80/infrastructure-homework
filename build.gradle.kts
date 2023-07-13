@@ -28,6 +28,12 @@ allprojects {
 
 }
 
+
+detekt {
+	config = files("${project.parent?.projectDir}/config/detekt.yml")
+	buildUponDefaultConfig = true
+}
+
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 val developmentOnly by configurations.creating
