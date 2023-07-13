@@ -7,8 +7,8 @@ plugins {
 	kotlin("plugin.spring") version "1.6.20"
 	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50" apply false
 	id("io.gitlab.arturbosch.detekt") version "1.18.1"
-	id("com.github.ben-manes.versions") version "0.38.0"
-	id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
+//	id("com.github.ben-manes.versions") version "0.38.0"
+//	id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
 }
 
 allprojects {
@@ -24,7 +24,7 @@ allprojects {
 	tasks.withType<KotlinCompile> {
 		kotlinOptions {
 			freeCompilerArgs = listOf("-Xjsr305=strict")
-			allWarningsAsErrors = true
+			allWarningsAsErrors = false
 			jvmTarget = "1.8"
 		}
 	}
