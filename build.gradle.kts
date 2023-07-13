@@ -37,7 +37,6 @@ detekt {
 	allRules = true
 }
 
-
 configurations.all {
 	resolutionStrategy {
 		eachDependency {
@@ -62,7 +61,6 @@ configurations {
 		extendsFrom(developmentOnly)
 	}
 }
-
 
 dependencies {
 	// spring modules
