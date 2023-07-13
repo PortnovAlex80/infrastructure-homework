@@ -8,6 +8,7 @@ plugins {
 	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50" apply false
 	id("io.gitlab.arturbosch.detekt") version "1.18.1"
 	id("com.github.ben-manes.versions") version "0.38.0"
+	id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
 }
 
 allprojects {
@@ -23,17 +24,34 @@ allprojects {
 	tasks.withType<KotlinCompile> {
 		kotlinOptions {
 			freeCompilerArgs = listOf("-Xjsr305=strict")
+			allWarningsAsErrors = true
 			jvmTarget = "1.8"
 		}
 	}
 
 }
 
-
 detekt {
 	config = files("${project.rootDir}/config/detekt/detekt.yml")
 	buildUponDefaultConfig = true
 	allRules = true
+}
+
+
+configurations.all {
+	resolutionStrategy {
+		eachDependency {
+
+			val versionIsSnapShot = requested.version?.contains("snapshot", true)
+
+			versionIsSnapShot?.run {
+				if (this) {
+					throw GradleException("Snapshot version is forbidden: ${requested.name} ${requested.version}")
+				}
+			}
+		}
+
+	}
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,7 +62,6 @@ configurations {
 		extendsFrom(developmentOnly)
 	}
 }
-
 
 
 dependencies {
