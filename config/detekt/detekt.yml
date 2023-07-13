@@ -1,10 +1,10 @@
 performance:
   SpreadOperator:
-    active: false
+    active: true
 
 style:
   WildcardImport:
-    active: false
+    active: true
   ReturnCount:
     active: false
     excludeGuardClauses: true

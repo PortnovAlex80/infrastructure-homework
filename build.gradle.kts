@@ -30,8 +30,9 @@ allprojects {
 
 
 detekt {
-	config = files("${project.parent?.projectDir}/config/detekt.yml")
+	config = files("${project.rootDir}/config/detekt/detekt.yml")
 	buildUponDefaultConfig = true
+	allRules = true
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8
