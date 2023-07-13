@@ -1,4 +1,4 @@
-name: Java CI/CD Workflow
+name: Java CI/CD Workflow new flow
 
 on:
   push:
