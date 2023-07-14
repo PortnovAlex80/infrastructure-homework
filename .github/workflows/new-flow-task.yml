@@ -33,7 +33,8 @@ jobs:
             pwd;
             cd ..;
             ls -l infraservice;
-            pwd;         
+            pwd; 
+            mkdir serv1;
 
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
@@ -45,7 +46,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.INFRAKEY }}
           source: "."
-          target: "/infraservice2"
+          target: "serv1"
           debug: true
 
 #      - name: Build and run Docker containers on remote server
