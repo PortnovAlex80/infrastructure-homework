@@ -31,6 +31,7 @@ jobs:
           command: |
             cd infraservice;
             pwd;
+            cd ..;
             ls -l infraservice;
 
 #      - name: Shutdown Docker containers
