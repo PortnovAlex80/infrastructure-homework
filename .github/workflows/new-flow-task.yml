@@ -33,7 +33,7 @@ jobs:
 
       - name: List files in source directory
         run: |
-          ls -l infraservice;
+          ls -l /infraservice;
           pwd;
 
 
