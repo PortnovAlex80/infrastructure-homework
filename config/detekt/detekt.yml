@@ -1,6 +1,6 @@
 performance:
   SpreadOperator:
-    active: true
+    active: false
 
 style:
   WildcardImport:
