@@ -30,12 +30,8 @@ jobs:
           private_key: ${{secrets.INFRAKEY}}
           command: |
             cd infraservice;
-
-      - name: List files in source directory
-        run: |
-          ls -l /infraservice;
-          pwd;
-
+            pwd;
+            ls -l infraservice;
 
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
