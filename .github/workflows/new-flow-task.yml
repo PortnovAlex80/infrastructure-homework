@@ -30,7 +30,11 @@ jobs:
           private_key: ${{secrets.INFRAKEY}}
           command: |
             cd infraservice;
-            docker-compose up --build -d;
+            git checkout main;
+            git pull;
+            docker-compose --file docker-compose.yml down;
+            docker-compose --file docker-compose.yml up -d;
+            docker system prune --all --force;
 
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
