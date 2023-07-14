@@ -28,6 +28,9 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           user: ${{secrets.SSH_USER}}
           private_key: ${{secrets.INFRAKEY}}
+          command: |
+            cd /infraservice
+            docker-compose up --build -d
 
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
@@ -42,13 +45,13 @@ jobs:
 #          target: "/infraservice"
 #          debug: true
 
-      - name: Build and run Docker containers on remote server
-        uses: D3rHase/ssh-command-action@v0.2.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          user: ${{secrets.SSH_USER}}
-          private_key: ${{secrets.INFRAKEY}}
-          command: |
-            cd /infraservice
-            docker-compose up --build -d
+#      - name: Build and run Docker containers on remote server
+#        uses: D3rHase/ssh-command-action@v0.2.2
+#        with:
+#          host: ${{secrets.SSH_HOST}}
+#          user: ${{secrets.SSH_USER}}
+#          private_key: ${{secrets.INFRAKEY}}
+#          command: |
+#            cd /infraservice
+#            docker-compose up --build -d
 
