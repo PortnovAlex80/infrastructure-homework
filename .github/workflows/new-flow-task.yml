@@ -29,8 +29,8 @@ jobs:
           user: ${{secrets.SSH_USER}}
           private_key: ${{secrets.INFRAKEY}}
           command: |
-            cd infraservice
-#            docker-compose up --build -d
+            cd infraservice;
+            docker-compose up --build -d;
 
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
