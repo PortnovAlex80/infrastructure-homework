@@ -22,11 +22,11 @@ jobs:
           distribution: 'adopt'
           cache: gradle
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build with Gradle
-        run: ./gradlew build
+#      - name: Grant execute permission for gradlew
+#        run: chmod +x gradlew
+#
+#      - name: Build with Gradle
+#        run: ./gradlew build
 
       - name: Build Docker images
         run: docker-compose up --build -d
@@ -34,28 +34,28 @@ jobs:
 #      - name: Run tests
 #        run: ./gradlew test
 #
-#      - name: Run command on remote server
-#        uses: D3rHase/ssh-command-action@v0.2.2
-#        with:
-#          host: ${{secrets.SSH_HOST}}
-#          user: ${{secrets.SSH_USER}}
-#          private_key: ${{secrets.INFRAKEY}}
-#          command: |
-#            echo '--- START WORK ON REMOTE SERVER ---';
-##            cd ${{ secrets.PROJECT_FOLDER }};
-#            echo '--- LIST OF FILES ---';
-#            ls -al;
-#            echo '--- GIT INFORMATION ---'
-##            git co dev;
-##            git pull;
-#            echo '--- DOCKER OPERATIONS ---';
-#            docker-compose down;
-#            echo '--- LIST OF DOCKER CONTAINERS AFTER STOPING DOCKER CONTAINERS ---';
-#            docker ps;
-##            docker-compose --file docker-compose.prod.yml up -d;
-##            docker system prune --all --force;
-#            echo '--- LIST OF DOCKER CONTAINERS AFTER STARTING DOCKER CONTAINERS ---';
-#            docker ps;
+      - name: Run command on remote server
+        uses: D3rHase/ssh-command-action@v0.2.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          user: ${{secrets.SSH_USER}}
+          private_key: ${{secrets.INFRAKEY}}
+          command: |
+            echo '--- START WORK ON REMOTE SERVER ---';
+#            cd ${{ secrets.PROJECT_FOLDER }};
+            echo '--- LIST OF FILES ---';
+            ls -al;
+            echo '--- GIT INFORMATION ---'
+#            git co dev;
+#            git pull;
+            echo '--- DOCKER OPERATIONS ---';
+            docker-compose up;
+            echo '--- LIST OF DOCKER CONTAINERS AFTER STOPING DOCKER CONTAINERS ---';
+            docker ps;
+#            docker-compose --file docker-compose.prod.yml up -d;
+#            docker system prune --all --force;
+            echo '--- LIST OF DOCKER CONTAINERS AFTER STARTING DOCKER CONTAINERS ---';
+            docker ps;
 
       - name: Shutdown Docker containers
         run: docker-compose down
