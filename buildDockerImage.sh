@@ -8,6 +8,7 @@ if [ -z "$1" ]
     imageTag=latest
 fi
 
+# aws
 repositoryName=613445080628.dkr.ecr.us-east-2.amazonaws.com/mainapp
 imageFullName=$repositoryName:$imageTag
 
