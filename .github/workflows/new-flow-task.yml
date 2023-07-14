@@ -32,15 +32,15 @@ jobs:
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
 
-      - name: Copy repo to remote server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.INFRAKEY }}
-          source: "."
-          target: "/infraservice"
-          debug: true
+#      - name: Copy repo to remote server
+#        uses: appleboy/scp-action@master
+#        with:
+#          host: ${{ secrets.SSH_HOST }}
+#          username: ${{ secrets.SSH_USER }}
+#          key: ${{ secrets.INFRAKEY }}
+#          source: "."
+#          target: "/infraservice"
+#          debug: true
 
       - name: Build and run Docker containers on remote server
         uses: D3rHase/ssh-command-action@v0.2.2
