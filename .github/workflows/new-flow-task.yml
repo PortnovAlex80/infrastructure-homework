@@ -31,6 +31,12 @@ jobs:
           command: |
             cd infraservice;
 
+      - name: List files in source directory
+        run: |
+          ls -l infraservice;
+          pwd;
+
+
 #      - name: Shutdown Docker containers
 #        run: docker-compose down
 
