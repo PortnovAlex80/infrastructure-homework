@@ -1,6 +1,5 @@
 name: Java CI/CD Workflow flow to ENTERPRISE 3
 
-
 on:
   push:
     branches: [ main ]
@@ -55,5 +54,6 @@ jobs:
           private_key: ${{secrets.INFRAKEY}}
           command: |
             cd infraservice
+            docker-compose down
             docker-compose up --build -d
 

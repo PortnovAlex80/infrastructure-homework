@@ -14,7 +14,7 @@ class MeUseCase(
         val me = Person(
                 id = UUID.fromString("29f4d7e3-fd7c-4664-ad07-763326215ec4"),
                 firstName = "Sergey",
-                secondName = "Bukharov",
+                secondName = "Bukharoff",
                 birthDate = LocalDate.of(1987,12,1),
                 sex = Person.Sex.MAN,
                 avatartUrl = "https://avatars.dicebear.com/v2/male/my-somffething.svg",
