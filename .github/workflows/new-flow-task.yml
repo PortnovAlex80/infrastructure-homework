@@ -53,7 +53,9 @@ jobs:
           user: ${{secrets.SSH_USER}}
           private_key: ${{secrets.INFRAKEY}}
           command: |
-            cd infraservice
-            docker-compose down
-            docker-compose up --build -d
+            cd infraservice;
+            docker-compose down;
+            ./build.sh
+            pwd;
+            docker-compose up --build -d;
 
