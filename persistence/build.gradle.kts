@@ -20,9 +20,16 @@ dependencies {
 
     // tests
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0") // adjust the version number if necessary
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
+    testImplementation(project(mapOf("path" to ":")))
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1") // align this version with others
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.2.1.BUILD-SNAPSHOT")
+
+    testImplementation ("org.testcontainers:testcontainers:1.17.3")
+    testImplementation("org.testcontainers:junit-jupiter:1.17.3")
+    testImplementation ("org.testcontainers:postgresql:1.17.3")
 }
 
 tasks.test {
