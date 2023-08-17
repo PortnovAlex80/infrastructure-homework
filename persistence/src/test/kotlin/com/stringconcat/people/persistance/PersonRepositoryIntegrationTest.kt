@@ -1,4 +1,5 @@
 
+import com.stringconcat.people.persistance.TestConfig
 import com.stringconcat.people.persistance.model.PersonEntity
 import com.stringconcat.people.persistance.repository.PersonRepository
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -9,13 +10,16 @@ import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ContextConfiguration
 
 import java.time.LocalDate
 import java.util.*
 
 @DataJpaTest
 @Testcontainers
-//@ContextConfiguration(classes = [PeopleApplication::class])
+@ContextConfiguration(classes = [TestConfig::class])
+// @SpringBootTest(classes = [TestConfig::class])
 class PersonRepositoryIntegrationTest {
 
     @Autowired
